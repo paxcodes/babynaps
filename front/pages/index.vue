@@ -23,12 +23,9 @@
         </div>
         <div class="grid-x">
           <div class="cell small-3">
-            <input
-              data-cy="submit"
-              type="submit"
-              class="button"
-              value="Get a Schedule"
-            />
+            <v-btn data-cy="submit" type="submit" color="primary" large
+              >Get a Schedule</v-btn
+            >
           </div>
         </div>
       </form>
