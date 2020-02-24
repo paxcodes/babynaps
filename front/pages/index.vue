@@ -10,16 +10,15 @@
       <form id="babyInfoForm" method="GET" action="/schedule">
         <div class="grid-x grid-margin-x">
           <div class="cell small-8 medium-6">
-            <label>
-              When is your baby&rsquo;s birthday?
-              <input
-                data-cy="bdate"
-                type="date"
-                :max="new Date()"
-                name="bdate"
-                required
-              />
-            </label>
+            <v-text-field
+              label="Your baby’s birthday"
+              data-cy="bdate"
+              :autofocus="true"
+              :max="new Date()"
+              type="date"
+              name="bdate"
+              required
+            ></v-text-field>
           </div>
         </div>
         <div class="grid-x">
