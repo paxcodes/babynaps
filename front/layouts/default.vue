@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-content>
+    <v-content style="max-width: 40rem" class="mx-auto">
       <v-container>
         <nuxt />
       </v-container>
