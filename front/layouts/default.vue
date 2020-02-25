@@ -11,7 +11,8 @@
           <span>
             &copy; {{ new Date().getFullYear() }} — The Baby Sleep App
           </span>
-          |
+        </v-card-text>
+        <v-card-text class="pa-0 caption">
           <span>
             Inspired by
             <a href="/img/IMG_0746.jpg">Jeconiah</a> &hearts;
