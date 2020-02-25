@@ -5,9 +5,9 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer :fixed="fixed" app class="blue darken-4 text-center">
-      <v-card flat tile class="text-center blue darken-4 ma-auto">
-        <v-card-text class="pa-0 caption white--text">
+    <v-footer :fixed="fixed" app class="text-center py-6">
+      <v-card flat tile class="grey lighten-4 text-center ma-auto">
+        <v-card-text class="pa-0 caption">
           <span>
             &copy; {{ new Date().getFullYear() }} — The Baby Sleep App
           </span>
@@ -20,7 +20,7 @@
           <span style="text-decoration:line-through">pandas</span>
           <a href="https://margret.pw">Pax</a> 🐼
         </v-card-text>
-        <v-card-text class="pa-0 caption white--text">
+        <v-card-text class="pa-0 caption">
           <span>
             Favicon made by
             <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
