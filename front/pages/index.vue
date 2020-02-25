@@ -1,75 +1,76 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a href="https://vuetifyjs.com" target="_blank"> documentation </a>.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat">
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+  <div>
+    <h1 class="text-center my-8">The Baby Schedule Maker</h1>
+    <div>
+      <h2 class="my-8">Tell us about your baby</h2>
+      <p>
+        Once we know how old your baby is, we&rsquo;ll get a schedule that you
+        can start with and customize according to your own needs.
+      </p>
+      <form id="babyInfoForm" method="GET" action="/schedule">
+        <div class="grid-x grid-margin-x">
+          <div class="cell small-8 medium-6">
+            <v-text-field
+              label="Your baby’s birthday"
+              data-cy="bdate"
+              :autofocus="true"
+              :max="new Date()"
+              type="date"
+              name="bdate"
+              required
+            ></v-text-field>
           </div>
-          <hr class="my-3" />
-          <a href="https://nuxtjs.org/" target="_blank">
-            Nuxt Documentation
-          </a>
-          <br />
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank">
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire">
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+        </div>
+        <div class="grid-x">
+          <div class="cell small-3">
+            <v-btn data-cy="submit" type="submit" color="primary" large
+              >Get a Schedule</v-btn
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+    <div data-cy="welcome-section">
+      <h2 class="mt-12 mb-8">Our story</h2>
+      <p>
+        <em>Every baby is different.</em> It sounds clich&eacute;&mdash;almost
+        like a cop-out for my own parenting incompetence. But after reading
+        <a
+          href="https://www.todaysparent.com/baby/baby-sleep/the-2-3-4-nap-schedule-that-will-get-your-baby-to-sleep/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >article</a
+        >
+        after
+        <a
+          href="https://www.babycenter.com/0_naps-the-first-year_1506357.bc"
+          target="_blank"
+          rel="noopener noreferrer"
+          >article</a
+        >
+        about schedules, looking at
+        <span class="footnote">conflicting nap charts<sup>1</sup></span
+        >, and making schedules from different generators, I am convinced that I
+        cannot simply blindly follow a schedule generated for me by some random
+        website. And yes, I learned that every baby is indeed different.
+      </p>
+      <p>
+        Therefore, I built this schedule <em>maker</em>. It will generate an
+        initial schedule that you can adjust according to your needs because
+        <em> you</em> know your baby best. There will be a handy chart of nap
+        needs based on different medical studies to guide you as you make your
+        schedule. Have fun!
+      </p>
+      <ol class="caption">
+        <li>
+          One chart says maximum awake time for my 7 month old is 2 hours, and
+          another says my baby can go as long as 3 hours. Yup.
+        </li>
+      </ol>
+    </div>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
-}
+export default {}
 </script>
