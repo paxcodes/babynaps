@@ -37,10 +37,15 @@
         like a cop-out for my own parenting incompetence. But after reading
         <a
           href="https://www.todaysparent.com/baby/baby-sleep/the-2-3-4-nap-schedule-that-will-get-your-baby-to-sleep/"
+          target="_blank"
+          rel="noopener noreferrer"
           >article</a
         >
         after
-        <a href="https://www.babycenter.com/0_naps-the-first-year_1506357.bc"
+        <a
+          href="https://www.babycenter.com/0_naps-the-first-year_1506357.bc"
+          target="_blank"
+          rel="noopener noreferrer"
           >article</a
         >
         about schedules, looking at

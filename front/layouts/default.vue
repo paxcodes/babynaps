@@ -19,16 +19,28 @@
           </span>
           | Hand-built by
           <span style="text-decoration:line-through">pandas</span>
-          <a href="https://margret.pw">Pax</a> 🐼
+          <a href="https://margret.pw" target="_blank" rel="noopener noreferrer"
+            >Pax</a
+          >
+          🐼
         </v-card-text>
         <v-card-text class="pa-0 caption">
           <span>
             Favicon made by
-            <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
+            <a
+              href="https://www.flaticon.com/authors/freepik"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Freepik"
               >Freepik</a
             >
             from
-            <a href="https://www.flaticon.com/" title="Flaticon">
+            <a
+              href="https://www.flaticon.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Flaticon"
+            >
               www.flaticon.com</a
             >
           </span>
