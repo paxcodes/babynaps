@@ -5,7 +5,7 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer :fixed="fixed" app class="text-center py-6">
+    <v-footer app absolute class="text-center py-4">
       <v-card flat tile class="grey lighten-4 text-center ma-auto">
         <v-card-text class="pa-0 caption">
           <span>
@@ -39,11 +39,5 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      fixed: false
-    }
-  }
-}
+export default {}
 </script>
