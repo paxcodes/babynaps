@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import mixins from "../mixins.js";
+import mixins from '../../mixins/mixins'
 
 export default {
   props: ["index"],

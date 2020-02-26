@@ -7,7 +7,7 @@ const Cycle = require('../../components/napSchedule/Cycle.vue').default
 const storeConfig = require('../../resources/js/store').default
 const test = require('../support/tests/schedule')
 const __ = require('../support/utils-schedule')
-Object.assign(__, require('../../resources/js/mixins').default.methods)
+Object.assign(__, require('../../mixins/mixins').default.methods)
 
 Vue.use(Vuex)
 const store = new Vuex.Store(storeConfig)
