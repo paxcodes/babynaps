@@ -4,7 +4,7 @@ const Vue = require('vue').default
 
 const Schedule = require('../../components/napSchedule/Schedule.vue').default
 const Cycle = require('../../components/napSchedule/Cycle.vue').default
-const storeConfig = require('../../resources/js/store').default
+const storeConfig = require('../../store/store').default
 const test = require('../support/tests/schedule')
 const __ = require('../support/utils-schedule')
 Object.assign(__, require('../../mixins/mixins').default.methods)
