@@ -51,11 +51,10 @@ export default {
       Object.assign({}, json.variables)
     )
 
-    cy.get(__.numNaps).then((numNaps) => {
-      const actual = Number(numNaps.text())
-      const expected = store.state.variables.numNaps
-      expect(actual).to.equal(expected)
-    })
+    cy.get(__.numNaps).should(
+      'have.text',
+      String(store.state.variables.numNaps)
+    )
 
     cy.get(__.daytimeSleep).then((daytimeSleep) => {
       const actual = __.removeWhitespace(daytimeSleep.text())
