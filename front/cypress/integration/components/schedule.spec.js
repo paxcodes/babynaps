@@ -2,19 +2,19 @@ const mountVue = require('cypress-vue-unit-test')
 const Vuex = require('vuex')
 const Vue = require('vue').default
 
-const Schedule = require('../../components/napSchedule/Schedule.vue').default
-const Cycle = require('../../components/napSchedule/Cycle.vue').default
-const storeConfig = require('../../store/store').default
-const test = require('../support/tests/schedule')
-const __ = require('../support/utils-schedule')
-Object.assign(__, require('../../mixins/mixins').default.methods)
+const Schedule = require('../../../components/napSchedule/Schedule.vue').default
+const Cycle = require('../../../components/napSchedule/Cycle.vue').default
+const storeConfig = require('../../../store/store').default
+const test = require('../../support/tests/schedule')
+const __ = require('../../support/utils-schedule')
+Object.assign(__, require('../../../mixins/mixins').default.methods)
 
 Vue.use(Vuex)
 const store = new Vuex.Store(storeConfig)
 
 describe('The schedule', () => {
   // @todo Use fixtures
-  const json = require('../fixtures/schedule6MonthOld.json')
+  const json = require('../../fixtures/schedule6MonthOld.json')
   const template = `
       <div>
         <schedule></schedule>
