@@ -13,9 +13,9 @@ Vue.use(Vuex)
 
 // @todo Use fixtures
 const json = require('../../fixtures/schedule6MonthOld.json')
+const store = new Vuex.Store(storeConfig)
 
 export const mountSchedule = () => {
-  const store = new Vuex.Store(storeConfig)
   const template = `
       <div>
         <schedule></schedule>
