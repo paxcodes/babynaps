@@ -44,19 +44,17 @@ describe('The app', () => {
 
     before(function() {
       this.bdate = __.bdateOf(9, 'months')
-      const json = require('../../references/for_testing.json')
-      cy.server()
-      cy.route('/api/schedule?bdate=' + this.bdate, {
-        cycles: json.cycles,
-        variables: json.variables,
-        napChart: napChart,
-        age: json.age
-      }).as('loadSchedule')
-
-      __.visitHomePage()
-      __.userSubmitsCompletedForm('Jack', this.bdate)
-
-      cy.wait('@loadSchedule')
+      cy.fixture('schedule6MonthOld').then((data) => {
+        cy.server()
+        cy.route('/api/schedule?bdate=' + data.bdate, {
+          cycles: data.cycles,
+          variables: data.variables,
+          napChart: napChart,
+          age: data.age
+        }).as('loadSchedule')
+        __.visitHomePage()
+        __.userSubmitsCompletedForm('Jack', this.bdate)
+      })
     })
 
     it('should not load another page', function() {

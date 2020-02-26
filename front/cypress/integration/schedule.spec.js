@@ -13,7 +13,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store(storeConfig)
 
 describe('The schedule', () => {
-  const json = require('../../references/for_testing.json')
+  // @todo Use fixtures
+  const json = require('../fixtures/schedule6MonthOld.json')
   const template = `
       <div>
         <schedule></schedule>
