@@ -1,5 +1,5 @@
-import * as util1 from "../../support/utils-schedule";
-import * as util2 from "../../support/utils";
+import * as util1 from '../support/utils-schedule'
+import * as util2 from '../support/utils'
 
 let __ = Object.assign({}, util1, util2);
 
