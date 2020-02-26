@@ -29,6 +29,7 @@ export const mountSchedule = () => {
     }
   }
   mountVue({ template, store }, { extensions })()
+  Cypress.vue.$store.commit('saveAge', json.age)
 }
 
 export const removeFirstNap = () => {
@@ -66,7 +67,6 @@ export default {
     })
   },
   shouldPrintAgeOfBaby: () => {
-    Cypress.vue.$store.commit('saveAge', json.age)
     cy.get(__.babyAge).then((babyAge) => {
       const actual = babyAge.text()
       const expected = store.state.age.month
@@ -74,7 +74,6 @@ export default {
     })
   },
   shouldDisplayAgeOfBabyInWeeksOnHover: () => {
-    Cypress.vue.$store.commit('saveAge', json.age)
     cy.get(__.babyAge).then((babyAge) => {
       const actual = babyAge.attr('title')
       const expected = store.state.age['weeks']
