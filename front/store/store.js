@@ -1,9 +1,9 @@
 export default {
-  state: {
+  state: () => ({
     cycles: [],
     variables: {},
     age: {}
-  },
+  }),
   mutations: {
     saveCycles(state, cycles) {
       state.cycles = cycles
