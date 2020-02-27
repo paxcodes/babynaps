@@ -1,9 +1,8 @@
 import * as __ from '../support/utils'
 
 describe('The app', () => {
+  before(() => cy.visit('/'))
   describe('on initial load', () => {
-    before(() => cy.visit('/'))
-
     it('focuses on bdate field when loaded', () => {
       cy.focused()
         .should('be', 'input')
@@ -23,7 +22,6 @@ describe('The app', () => {
       cy.server()
       cy.route('/api/schedule?bdate=' + bdate).as('loadSchedule')
 
-      __.visitHomePage()
       __.userSubmitsCompletedForm('Jack', bdate)
 
       cy.wait('@loadSchedule')

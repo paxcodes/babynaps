@@ -1,1 +1,5 @@
-{}
+{
+  "baseUrl": "http://localhost:3000",
+  "ignoreTestFiles": "*.scripts.js",
+  "$schema": "https://on.cypress.io/cypress.schema.json"
+}
