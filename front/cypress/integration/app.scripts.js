@@ -6,17 +6,18 @@ const napChart = {
   sources: []
 }
 
+const givenBirthDate = __.bdateOf(6, 'months')
+
 export const submitFormWithValidInputs = () => {
-  const bdate = __.bdateOf(9, 'months')
   cy.fixture('schedule6MonthOld').then((data) => {
     cy.server()
-    cy.route(Cypress.env('apiUrl') + '/schedule?bdate=' + data.bdate, {
+    cy.route(Cypress.env('apiUrl') + '/schedule?bdate=' + givenBirthDate, {
       cycles: data.cycles,
       variables: data.variables,
       napChart: napChart,
       age: data.age
     }).as('loadSchedule')
-    __.userSubmitsCompletedForm('Jack', bdate)
+    __.userSubmitsCompletedForm('Jack', givenBirthDate)
   })
 }
 
@@ -45,7 +46,7 @@ export default {
   },
   shouldGoToTheSchedulePage: () => {
     cy.location().should((loc) => {
-      expect(loc.search).to.eq('?bdate=2019-06-01')
+      expect(loc.search).to.eq('?bdate=' + givenBirthDate)
       expect(loc.pathname).to.eq('/schedule')
     })
   },
