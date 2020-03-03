@@ -2,7 +2,7 @@ export default {
   shouldHaveScheduleAndNapChart: () => {
     cy.getCy('scheduleSection').should('be.visible')
     cy.getCy('chartSection').should('be.visible')
-    cy.getCy('welcomeSection').should('not.be.visible')
+    cy.getCy('welcomeSection').should('not.exist')
   },
   shouldContainRowsOfData: () => {
     __.visitHomePage()
