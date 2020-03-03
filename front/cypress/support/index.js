@@ -35,3 +35,7 @@ Cypress.on('fail', (err, runnable) => {
   throw err
 })
 /** END of `Implement cleaner stack traces` */
+
+Cypress.Commands.add(`getCy`, (selector, options = {}) =>
+  cy.get(`[data-cy="${selector}"]`, options)
+)
