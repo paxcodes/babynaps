@@ -37,8 +37,12 @@ optionsForBrowserify.browserifyOptions.transform[1][1].retainLines = true
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-  on('file:preprocessor', webpack(optionsForWebpack))
-  on('file:preprocessor', browserify(optionsForBrowserify))
+  on('file:preprocessor', (file) => {
+    if (file.filePath.match(/.+\/integration\/components\/.+\.spec\.js/)) {
+      // Use webpack if unit-testing a Vue component
+      return webpack(optionsForWebpack)(file)
+    } else {
+      return browserify(optionsForBrowserify)(file)
+    }
+  })
 }
