@@ -50,11 +50,6 @@ export default {
       expect(loc.pathname).to.eq('/schedule')
     })
   },
-  shouldSetNapChartData: () => {
-    cy.window()
-      .its('app.napChart')
-      .should('not.be.undefined')
-  },
   shouldReplaceContentWithScheduleAndNapChart: () => {
     cy.get(__.scheduleSection).should('be.visible')
     cy.get(__.chartSection).should('be.visible')

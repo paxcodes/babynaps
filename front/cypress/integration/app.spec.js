@@ -18,7 +18,6 @@ describe('The app', () => {
     before(submitFormWithValidInputs)
 
     it('should not load another page', tests.shouldNotLoadAnotherPage)
-    it('should set napChart data', tests.shouldSetNapChartData)
     it(
       'should replace content with the schedule and chart of sleep needs',
       tests.shouldReplaceContentWithScheduleAndNapChart
