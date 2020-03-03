@@ -10,7 +10,7 @@ export const submitFormWithValidInputs = () => {
   this.bdate = __.bdateOf(9, 'months')
   cy.fixture('schedule6MonthOld').then((data) => {
     cy.server()
-    cy.route('/api/schedule?bdate=' + data.bdate, {
+    cy.route(Cypress.env('apiUrl') + '/api/schedule?bdate=' + data.bdate, {
       cycles: data.cycles,
       variables: data.variables,
       napChart: napChart,
