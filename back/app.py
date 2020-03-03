@@ -6,5 +6,5 @@ def helloWorld():
     return "Hello, World!"
 
 @app.route('/schedule')
-def helloWorld():
+def schedule():
     return []
