@@ -43,8 +43,11 @@ export default {
       expect(error).to.be.visible
     })
   },
-  shouldNotLoadAnotherPage: () => {
-    cy.location('pathname').should('be.equal', '/')
+  shouldGoToTheSchedulePage: () => {
+    cy.location().should((loc) => {
+      expect(loc.search).to.eq('?bdate=2019-06-01')
+      expect(loc.pathname).to.eq('/schedule')
+    })
   },
   shouldSetNapChartData: () => {
     cy.window()
