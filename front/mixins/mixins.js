@@ -1,14 +1,14 @@
 export default {
   methods: {
-    timeLabel: function(time) {
+    timeLabel: (time) => {
       // Singular for exactly 1. Plural otherwise, evenfor fractions less than 1.
       // See https://english.stackexchange.com/questions/2139/
-      let label = "hour";
-      if (time != 1) {
-        label += "s";
+      let label = 'hour'
+      if (time !== 1) {
+        label += 's'
       }
 
-      return label;
+      return label
     },
 
     /**
@@ -17,23 +17,23 @@ export default {
      * @param {Float} interval - in hours
      * @return {String} time - the resulting time in 24h format HH:MM
      */
-    addTime: function(time, interval) {
-      interval *= 3600000;
-      time = new Date("January 1, 1980 " + time);
+    addTime: (time, interval) => {
+      interval *= 3600000
+      time = new Date('January 1, 1980 ' + time)
 
-      time = new Date(time.getTime() + interval);
-      let time_h = time.getHours();
-      let time_m = time.getMinutes();
+      time = new Date(time.getTime() + interval)
+      let timeH = time.getHours()
+      let timeM = time.getMinutes()
 
-      if (time_h < 10) {
-        time_h = "0" + time_h;
+      if (timeH < 10) {
+        timeH = '0' + timeH
       }
 
-      if (time_m < 10) {
-        time_m = "0" + time_m;
+      if (timeM < 10) {
+        timeM = '0' + timeM
       }
 
-      return time_h + ":" + time_m;
-    },
-  },
-};
+      return timeH + ':' + timeM
+    }
+  }
+}
