@@ -17,7 +17,7 @@ describe('The app', () => {
   describe('when user submits completed form with valid inputs', function() {
     before(submitFormWithValidInputs)
 
-    it('should not load another page', tests.shouldNotLoadAnotherPage)
+    it('should go to the `/schedule` page', tests.shouldGoToTheSchedulePage)
     it(
       'should replace content with the schedule and chart of sleep needs',
       tests.shouldReplaceContentWithScheduleAndNapChart
