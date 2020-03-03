@@ -18,13 +18,5 @@ describe('The app', () => {
     before(submitFormWithValidInputs)
 
     it('should go to the `/schedule` page', tests.shouldGoToTheSchedulePage)
-    it.only(
-      'should replace content with the schedule and chart of sleep needs',
-      tests.shouldReplaceContentWithScheduleAndNapChart
-    )
-
-    describe('The nap chart', () => {
-      it('should contain rows of data', tests.shouldContainRowsOfData)
-    })
   })
 })
