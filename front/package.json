@@ -29,6 +29,7 @@
     "@nuxtjs/dotenv": "^1.4.0"
   },
   "devDependencies": {
+    "@cypress/browserify-preprocessor": "^2.1.4",
     "@cypress/webpack-preprocessor": "^4.1.2",
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
