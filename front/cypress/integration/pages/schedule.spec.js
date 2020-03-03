@@ -2,8 +2,8 @@ import tests from './schedule.scripts'
 
 describe('The `/schedule?bdate=[bdate]` page', () => {
   it(
-    'should replace content with the schedule and chart of sleep needs',
-    tests.shouldReplaceContentWithScheduleAndNapChart
+    'should have the schedule and chart of sleep needs',
+    tests.shouldHaveScheduleAndNapChart
   )
 
   describe('The nap chart', () => {
