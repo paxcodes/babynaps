@@ -7,7 +7,7 @@ const napChart = {
 }
 
 export const submitFormWithValidInputs = () => {
-  this.bdate = __.bdateOf(9, 'months')
+  const bdate = __.bdateOf(9, 'months')
   cy.fixture('schedule6MonthOld').then((data) => {
     cy.server()
     cy.route(Cypress.env('apiUrl') + '/schedule?bdate=' + data.bdate, {
@@ -16,7 +16,7 @@ export const submitFormWithValidInputs = () => {
       napChart: napChart,
       age: data.age
     }).as('loadSchedule')
-    __.userSubmitsCompletedForm('Jack', this.bdate)
+    __.userSubmitsCompletedForm('Jack', bdate)
   })
 }
 
