@@ -16,7 +16,6 @@ export const submitFormWithValidInputs = () => {
       napChart: napChart,
       age: data.age
     }).as('loadSchedule')
-    __.visitHomePage()
     __.userSubmitsCompletedForm('Jack', this.bdate)
   })
 }
