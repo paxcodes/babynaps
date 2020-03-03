@@ -36,8 +36,14 @@
 </template>
 
 <script>
+import napChart from './NapChart.json'
+
 export default {
-  props: ["napChart"],
+  data: () => {
+    return {
+      napChart
+    }
+  },
   methods: {
     key(pre, index) {
       return pre + '-' + index
