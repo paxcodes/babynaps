@@ -18,7 +18,7 @@ describe('The app', () => {
     before(submitFormWithValidInputs)
 
     it('should go to the `/schedule` page', tests.shouldGoToTheSchedulePage)
-    it(
+    it.only(
       'should replace content with the schedule and chart of sleep needs',
       tests.shouldReplaceContentWithScheduleAndNapChart
     )

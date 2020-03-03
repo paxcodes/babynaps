@@ -1,4 +1,4 @@
-import * as __ from '../support/utils'
+import * as __ from '../../support/utils'
 
 const napChart = {
   description: '',
