@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 /**
  * START vue-loader
  * For cypress-vue-unit-test
@@ -45,4 +47,7 @@ module.exports = (on, config) => {
       return browserify(optionsForBrowserify)(file)
     }
   })
+
+  config.env.apiUrl = process.env.API_URL
+  return config
 }
