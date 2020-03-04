@@ -1,0 +1,46 @@
+{
+  "data": {
+    "cycles": [
+      {
+        "label": "Wake up",
+        "time": "06:30",
+        "length": 3
+      },
+      {
+        "label": "Nap",
+        "time": "09:30",
+        "length": 1.5
+      },
+      {
+        "label": "Eat / Play",
+        "time": "11:00",
+        "length": 3.5
+      },
+      {
+        "label": "Nap",
+        "time": "14:30",
+        "length": 1.5
+      },
+      {
+        "label": "Eat / Play",
+        "time": "16:00",
+        "length": 3.5
+      },
+      {
+        "label": "Bedtime",
+        "time": "19:30",
+        "length": false
+      }
+    ],
+    "variables": {
+      "first": 3,
+      "activity": 3.5,
+      "numNaps": 2,
+      "nap": 1.5
+    },
+    "age": {
+      "weeks": "26 weeks 1 day",
+      "month": "6-month"
+    }
+  }
+}
