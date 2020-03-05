@@ -1,7 +1,6 @@
 from freezegun import freeze_time
 
 from baby.Baby import ABaby
-from helper import calculateAge
 
 
 @freeze_time("2018-12-01")
