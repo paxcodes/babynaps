@@ -8,6 +8,7 @@ authors = ["Pax <pax.margret@gmail.com>"]
 python = "^3.7"
 flask = "^1.1.1"
 gunicorn = "^20.0.4"
+python-dateutil = "^2.8.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.3.5"
