@@ -1,2 +1,0 @@
-def calculateAge(bdate):
-    pass
