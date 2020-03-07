@@ -40,7 +40,7 @@ export const userSubmitsCompletedForm = function(name, bdate) {
 }
 
 export const visitHomeAndSubmitCompletedForm = () => {
-  visitHomePage()
+  cy.visit('/')
   const birthdate = bdateOf('6', 'months')
   userSubmitsCompletedForm('', birthdate)
 }
