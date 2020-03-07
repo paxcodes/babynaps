@@ -1,4 +1,5 @@
 from pathlib import Path
+import json
 
 
 class ASchedule:
@@ -11,8 +12,9 @@ class ASchedule:
 
     def __LoadVariables(self):
         jsonFile = ASchedule._GetJsonFile(self.baby.age['months'])
-        # json = Storage:: disk('references').get('schedules/' . file . '.json')
-        # return variables = json_decode(json, TRUE)['variables']
+        with open(jsonFile, 'r') as fileContents:
+            variables = OrderedDict(json.load(fileContents))
+        return variables
 
     def __GenerateCycles(self):
         pass
