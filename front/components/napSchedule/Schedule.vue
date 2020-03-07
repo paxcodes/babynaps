@@ -14,11 +14,11 @@
         </tr>
       </thead>
       <tbody>
-        <cycle
+        <Cycle
           v-for="(cycle, index) in cycles"
           :key="index + 1"
           :index="index"
-        ></cycle>
+        ></Cycle>
       </tbody>
     </table>
     <button
@@ -43,8 +43,12 @@
 
 <script>
 import mixins from '../../mixins/mixins'
+import Cycle from './Cycle'
 
 export default {
+  components: {
+    Cycle
+  },
   mixins: [mixins],
   computed: {
     cycles() {
