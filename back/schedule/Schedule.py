@@ -7,11 +7,15 @@ class ASchedule:
     def __init__(self, baby):
         self.baby = baby
         self.variables = self.__LoadVariables()
+        self.cycles = self.__GenerateCycles()
 
     def __LoadVariables(self):
         jsonFile = ASchedule._GetJsonFile(self.baby.age['months'])
         # json = Storage:: disk('references').get('schedules/' . file . '.json')
         # return variables = json_decode(json, TRUE)['variables']
+
+    def __GenerateCycles(self):
+        pass
 
     @staticmethod
     def _GetJsonFile(ageInMonths):

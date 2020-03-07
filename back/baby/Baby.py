@@ -4,6 +4,7 @@ from math import floor
 
 from dateutil.relativedelta import relativedelta
 
+from schedule.Schedule import ASchedule
 from helper import pluralize
 
 
@@ -39,3 +40,8 @@ class ABaby:
             "total_days": daysDelta.days,
         }
         return age
+
+    def Schedule(self):
+        if not hasattr(self, "schedule"):
+            self.schedule = ASchedule(self)
+        return self.schedule
