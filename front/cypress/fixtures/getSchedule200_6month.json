@@ -4,39 +4,49 @@
       {
         "label": "Wake up",
         "time": "06:30",
-        "length": 3
+        "length": 2
       },
       {
         "label": "Nap",
+        "time": "08:30",
+        "length": 1
+      },
+      {
+        "label": "Eat / Play",
         "time": "09:30",
-        "length": 1.5
-      },
-      {
-        "label": "Eat / Play",
-        "time": "11:00",
-        "length": 3.5
+        "length": 2.5
       },
       {
         "label": "Nap",
-        "time": "14:30",
-        "length": 1.5
+        "time": "12:00",
+        "length": 1
       },
       {
         "label": "Eat / Play",
-        "time": "16:00",
-        "length": 3.5
+        "time": "13:00",
+        "length": 2.5
+      },
+      {
+        "label": "Nap",
+        "time": "15:30",
+        "length": 1
+      },
+      {
+        "label": "Eat / Play",
+        "time": "16:30",
+        "length": 2.5
       },
       {
         "label": "Bedtime",
-        "time": "19:30",
+        "time": "19:00",
         "length": false
       }
     ],
     "variables": {
-      "first": 3,
-      "activity": 3.5,
-      "numNaps": 2,
-      "nap": 1.5
+      "first": 2,
+      "activity": 2.5,
+      "numNaps": 3,
+      "nap": 1
     },
     "age": {
       "weeks": "26 weeks 1 day",
