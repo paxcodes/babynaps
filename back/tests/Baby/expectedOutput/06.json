@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Wake up",
+    "time": "06:30",
+    "length": 2
+  },
+  {
+    "label": "Nap",
+    "time": "08:30",
+    "length": 1
+  },
+  {
+    "label": "Eat / Play",
+    "time": "09:30",
+    "length": 2.5
+  },
+  {
+    "label": "Nap",
+    "time": "12:00",
+    "length": 1
+  },
+  {
+    "label": "Eat / Play",
+    "time": "13:00",
+    "length": 2.5
+  },
+  {
+    "label": "Nap",
+    "time": "15:30",
+    "length": 1
+  },
+  {
+    "label": "Eat / Play",
+    "time": "16:30",
+    "length": 2.5
+  },
+  {
+    "label": "Bedtime",
+    "time": "19:00",
+    "length": false
+  }
+]
