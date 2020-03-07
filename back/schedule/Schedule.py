@@ -1,3 +1,6 @@
+from datetime import datetime
+from datetime import timedelta
+
 from pathlib import Path
 import json
 
@@ -17,7 +20,37 @@ class ASchedule:
         return variables
 
     def __GenerateCycles(self):
-        pass
+        currentTime = datetime(1900, 1, 1, 6, 30)
+        cycles = [{
+            'label': 'Wake up',
+            'time': currentTime.strftime('%H:%M'),
+            'length': self.variables["first"],
+        }]
+
+        currentTime = currentTime + \
+            timedelta(hours=self.variables["first"])
+        for i in range(1, self.variables["numNaps"]+1):
+            cycles.append({
+                'label': 'Nap',
+                'time':  currentTime.strftime('%H:%M'),
+                'length': self.variables['nap'],
+            })
+            currentTime = currentTime + \
+                timedelta(hours=self.variables["nap"])
+            cycles.append({
+                'label': 'Eat / Play',
+                'time': currentTime.strftime('%H:%M'),
+                'length': self.variables['activity'],
+            })
+            currentTime = currentTime + \
+                timedelta(hours=self.variables['activity'])
+
+        cycles.append({
+            'label': 'Bedtime',
+            'time': currentTime.strftime('%H:%M'),
+            'length': False,
+        })
+        return cycles
 
     @staticmethod
     def _GetJsonFile(ageInMonths):
