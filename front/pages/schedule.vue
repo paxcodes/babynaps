@@ -7,7 +7,7 @@
 
 <script>
 import Schedule from '../components/napSchedule/Schedule'
-import NapChart from '../components/napSchedule/NapChart'
+import NapChart from '../components/napSchedule/NapChart.vue'
 
 export default {
   components: {
