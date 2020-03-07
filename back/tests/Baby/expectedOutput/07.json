@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Wake up",
+    "time": "06:30",
+    "length": 3
+  },
+  {
+    "label": "Nap",
+    "time": "09:30",
+    "length": 1.5
+  },
+  {
+    "label": "Eat / Play",
+    "time": "11:00",
+    "length": 3
+  },
+  {
+    "label": "Nap",
+    "time": "14:00",
+    "length": 1.5
+  },
+  {
+    "label": "Eat / Play",
+    "time": "15:30",
+    "length": 3
+  },
+  {
+    "label": "Bedtime",
+    "time": "18:30",
+    "length": false
+  }
+]

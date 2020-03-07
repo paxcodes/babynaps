@@ -24,8 +24,8 @@
     <button
       type="button"
       class="button hollow"
-      @click="addNap"
       data-cy="addNap"
+      @click="addNap"
     >
       Add a Nap
     </button>
@@ -46,11 +46,6 @@ import mixins from '../../mixins/mixins'
 
 export default {
   mixins: [mixins],
-  methods: {
-    addNap() {
-      this.$store.commit('addNap')
-    }
-  },
   computed: {
     cycles() {
       return this.$store.state.cycles
@@ -69,6 +64,11 @@ export default {
     },
     ageInWeeks() {
       return this.$store.state.age.weeks
+    }
+  },
+  methods: {
+    addNap() {
+      this.$store.commit('addNap')
     }
   }
 }

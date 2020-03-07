@@ -1,7 +1,7 @@
 <template>
   <div class="cell">
     <h3 class="h4">Average Sleep Needs</h3>
-    <p>{{napChart.description}}</p>
+    <p>{{ napChart.description }}</p>
     <table>
       <thead>
         <tr>
@@ -13,19 +13,22 @@
       </thead>
       <tbody>
         <tr v-for="(row, index) in napChart.table" :key="key('row', index)">
-          <td v-bind:class="{ highlight: row.relevant }">{{row.age}}</td>
-          <td>{{row.awakeTime}}</td>
-          <td>{{row.daytimeSleep}}</td>
-          <td>{{row.totalSleep}}</td>
+          <td :class="{ highlight: row.relevant }">{{ row.age }}</td>
+          <td>{{ row.awakeTime }}</td>
+          <td>{{ row.daytimeSleep }}</td>
+          <td>{{ row.totalSleep }}</td>
         </tr>
       </tbody>
     </table>
-    <div class="tiny">References:
-      <br>
+    <div class="tiny">
+      References:
+      <br />
       <ol>
-        <li v-for="(source, index) in napChart.sources" :key="key('source', index)">
-          {{source.citation}} [
-          <a :href="source.url">link</a> ]
+        <li
+          v-for="(source, index) in napChart.sources"
+          :key="key('source', index)"
+        >
+          {{ source.citation }} [ <a :href="source.url">link</a> ]
         </li>
       </ol>
     </div>
@@ -33,12 +36,18 @@
 </template>
 
 <script>
+import napChart from './NapChart.json'
+
 export default {
-  props: ["napChart"],
+  data: () => {
+    return {
+      napChart
+    }
+  },
   methods: {
     key(pre, index) {
-      return pre + "-" + index;
+      return pre + '-' + index
     }
   }
-};
+}
 </script>

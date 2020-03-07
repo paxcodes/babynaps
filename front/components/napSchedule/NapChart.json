@@ -1,0 +1,105 @@
+{
+  "description": "This chart considers the Switzerland study on infant sleep, and sleep recommendations by the National Sleep Foundation and Canadian Society for Exercise Physiology.",
+  "sources": [
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/pubmed/12563055",
+      "citation": "Iglowstein I, Jenni OG, Molinari L, Largo RH. Sleep duration from infancy to adolescence: reference values and generational trends. Pediatrics. 2003;111(2):302–307."
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267703/",
+      "citation": "Chaput JP, Dutil C, Sampasa-Kanyinga H. Sleeping hours: what is the ideal number and how does age impact this?. Nat Sci Sleep. 2018;10:421–430. Published 2018 Nov 27."
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/pubmed/29073398",
+      "citation": "Hirshkowitz M, Whiton K, Albert SM, et al. National Sleep Foundation’s updated sleep duration recommendations: final report. Sleep Health. 2015;1(4):233–243."
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5773896/",
+      "citation": "Tremblay MS, Chaput JP, Adamo KB, et al. Canadian 24-hour movement guidelines for the early years (0–4 years): an integration of physical activity, sedentary behaviour, and sleep. BMC Public Health. 2017;17(Suppl 5):874."
+    }
+  ],
+  "table": [
+    {
+      "age": "0–2",
+      "awakeTime": "0.5–1.25",
+      "daytimeSleep": "4.5–7",
+      "totalSleep": "14–17",
+      "50percentile": "13–16",
+      "96percentile": "9–19",
+      "notes": [
+        "I personally think babies this young should be given time to simply let them follow their own natural sleep rhythms. Although it is said that baby's natural schedule will start to emerge at around 6 weeks, many moms testify that they didn't have a predictable, consistent schedule going until 3 months."
+      ],
+      "relevant": false
+    },
+    {
+      "age": "3–5",
+      "awakeTime": "1.25–2.5",
+      "daytimeSleep": "3.5–6",
+      "totalSleep": "14–15",
+      "50percentile": "13–16",
+      "96percentile": "10–19",
+      "relevant": false
+    },
+    {
+      "age": "6",
+      "awakeTime": "2.25–3",
+      "daytimeSleep": "2.5–4.5",
+      "totalSleep": "14",
+      "50percentile": "13–15.5",
+      "96percentile": "10.25–18",
+      "notes": [],
+      "relevant": false
+    },
+    {
+      "age": "7–8",
+      "awakeTime": "2.5–3.5",
+      "daytimeSleep": "2.5–4.5",
+      "totalSleep": "14",
+      "50percentile": "13–15.5",
+      "96percentile": "10.25–18",
+      "notes": [
+        "Babies sometimes transition from 3 to 2 naps around 7 to 8 months. When they're just beginning to have 2 naps, it is common for their awake times to go as long as 4 hours, but during this \"transition\" some parents limit their total wake times to only 9 hours. As the 2 naps become settled, total wake time will start to gradually go back up to 10 hours."
+      ],
+      "relevant": false
+    },
+    {
+      "age": "9–11",
+      "awakeTime": "3–3.75",
+      "daytimeSleep": "2–4",
+      "totalSleep": "14",
+      "50percentile": "12.75–15",
+      "96percentile": "10.5–17.5",
+      "relevant": false
+    },
+    {
+      "age": "12–17",
+      "awakeTime": "3.25–5.5",
+      "daytimeSleep": "2–3.5",
+      "totalSleep": "14",
+      "50percentile": "13–15",
+      "96percentile": "11–16.5",
+      "relevant": false
+    },
+    {
+      "age": "18–23",
+      "awakeTime": "5.5–6.5",
+      "daytimeSleep": "1.5–2.5",
+      "totalSleep": "13.5",
+      "50percentile": "12.75–14.5",
+      "96percentile": "11–16",
+      "notes": [
+        "If your baby is taking longer to fall asleep at bedtime, try wiggling your schedule around a little bit:  moving the naptime 15 minutes later, or 15 minutes earlier."
+      ],
+      "relevant": false
+    },
+    {
+      "age": "24",
+      "awakeTime": "5.5–6.5",
+      "daytimeSleep": "1.25–2.5",
+      "totalSleep": "13.25",
+      "50percentile": "12.25–14",
+      "96percentile": "10.75–15.5",
+      "relevant": false
+    }
+  ]
+}
