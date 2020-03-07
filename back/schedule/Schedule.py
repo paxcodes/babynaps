@@ -9,13 +9,12 @@ class ASchedule:
         self.variables = self.__LoadVariables()
 
     def __LoadVariables(self):
-        fileName = Schedule._GetJsonFile(self.baby.age['months'])
-
+        jsonFile = ASchedule._GetJsonFile(self.baby.age['months'])
         # json = Storage:: disk('references').get('schedules/' . file . '.json')
         # return variables = json_decode(json, TRUE)['variables']
 
     @staticmethod
-    def _GetJsonFileName(ageInMonths):
+    def _GetJsonFile(ageInMonths):
         jsonFiles = ASchedule.kReferenceDirectory.glob('*.json')
         minDiff = 999
         fileToReference = None
