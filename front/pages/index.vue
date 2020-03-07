@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1 class="text-center my-8">The Baby Schedule Maker</h1>
     <div>
       <h2 class="my-8">Tell us about your baby</h2>
       <p>
