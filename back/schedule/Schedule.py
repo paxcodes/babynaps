@@ -13,7 +13,7 @@ class ASchedule:
     def __LoadVariables(self):
         jsonFile = ASchedule._GetJsonFile(self.baby.age['months'])
         with open(jsonFile, 'r') as fileContents:
-            variables = OrderedDict(json.load(fileContents))
+            variables = json.load(fileContents)
         return variables
 
     def __GenerateCycles(self):
