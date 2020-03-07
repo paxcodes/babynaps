@@ -6,27 +6,27 @@
       <a
         v-if="label == 'Nap'"
         href="#"
-        @click.prevent="removeNap()"
         title="Remove this nap"
         class="tiny"
         data-class="removeNapLink"
+        @click.prevent="removeNap()"
         >&times; remove this nap</a
       >
     </td>
     <td>
       <!-- @todo warn when value is too early / too late? -->
-      <input :value="time" @input="adjustTime" type="time" required />
+      <input type="time" required :value="time" @input="adjustTime" />
     </td>
     <td>
       <div v-if="length !== false" class="grid-x input-group">
         <!-- @todo warn when value is too high / low? -->
         <input
           class="input-group-field cell small-6 medium-4"
-          :value="length"
-          @input="adjustLength"
           type="number"
           step="0.25"
           required
+          :value="length"
+          @input="adjustLength"
         />
         <span class="input-group-label cell small-6 medium-5">{{
           lengthLabel
@@ -40,46 +40,13 @@
 import mixins from '../../mixins/mixins'
 
 export default {
-  props: ['index'],
   mixins: [mixins],
-  methods: {
-    removeNap() {
-      this.$store.commit('removeNap', this.index)
-    },
-
-    adjustTime() {
-      var newValue = event.target.value
-      // If this is not the first element, update the length of
-      // the previous cycle. Vue will then handle the rest.
-      if (this.index) {
-        newValue = this.diffTime(newValue, this.prevTime)
-        this.$store.commit('changeLength', {
-          key: this.index - 1,
-          newValue: newValue
-        })
-      } else {
-        this.$store.commit('changeTime', {
-          key: this.index,
-          newValue: newValue
-        })
-      }
-    },
-
-    adjustLength() {
-      this.$store.commit('changeLength', {
-        key: this.index,
-        newValue: event.target.value
-      })
-    },
-
-    diffTime: function(time1, time2) {
-      let date1 = new Date('January 1, 1980 ' + time1)
-      let date2 = new Date('January 1, 1980 ' + time2)
-
-      return (date1 - date2) / 3600000
+  props: {
+    index: {
+      type: Number,
+      default: null
     }
   },
-
   computed: {
     cycleType() {
       if (['Nap', 'Bedtime'].includes(this.label)) {
@@ -117,22 +84,57 @@ export default {
       return 0
     }
   },
-
+  watch: {
+    time(newValue, oldVal) {
+      if (this.index) {
+        this.$store.commit('changeTime', {
+          key: this.index,
+          newValue
+        })
+      }
+    }
+  },
   created() {
     this.$store.commit('changeTime', {
       key: this.index,
       newValue: this.time
     })
   },
+  methods: {
+    removeNap() {
+      this.$store.commit('removeNap', this.index)
+    },
 
-  watch: {
-    time(newValue, oldVal) {
+    adjustTime() {
+      let newValue = event.target.value
+      // If this is not the first element, update the length of
+      // the previous cycle. Vue will then handle the rest.
       if (this.index) {
+        newValue = this.diffTime(newValue, this.prevTime)
+        this.$store.commit('changeLength', {
+          key: this.index - 1,
+          newValue
+        })
+      } else {
         this.$store.commit('changeTime', {
           key: this.index,
-          newValue: newValue
+          newValue
         })
       }
+    },
+
+    adjustLength() {
+      this.$store.commit('changeLength', {
+        key: this.index,
+        newValue: event.target.value
+      })
+    },
+
+    diffTime: (time1, time2) => {
+      const date1 = new Date('January 1, 1980 ' + time1)
+      const date2 = new Date('January 1, 1980 ' + time2)
+
+      return (date1 - date2) / 3600000
     }
   }
 }

@@ -9,7 +9,7 @@ const napChart = {
 const givenBirthDate = __.bdateOf(6, 'months')
 
 export const submitFormWithValidInputs = () => {
-  cy.fixture('schedule6MonthOld').then((data) => {
+  cy.fixture('getSchedule200_6month').then((data) => {
     cy.server()
     cy.route(Cypress.env('apiUrl') + '/schedule?bdate=' + givenBirthDate, {
       cycles: data.cycles,
@@ -34,7 +34,9 @@ export default {
   shouldDisplayAnErrorMessage: () => {
     const bdate = __.bdateOf('32', 'months')
     cy.server()
-    cy.route('/api/schedule?bdate=' + bdate).as('loadSchedule')
+    cy.route(Cypress.env('apiUrl') + '/schedule?bdate=' + bdate).as(
+      'loadSchedule'
+    )
 
     __.userSubmitsCompletedForm('Jack', bdate)
     cy.wait('@loadSchedule')
