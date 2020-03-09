@@ -60,9 +60,8 @@ export default {
 
     cy.get(__.daytimeSleep).then((daytimeSleep) => {
       const actual = __.removeWhitespace(daytimeSleep.text())
-
-      const expected_ds = store.state.variables.daytimeSleep
-      const expected = expected_ds + ' ' + __.timeLabel(expected_ds)
+      const expectedHrs = 3
+      const expected = expectedHrs + ' ' + __.timeLabel(expectedHrs)
 
       expect(actual).to.equal(expected)
     })
