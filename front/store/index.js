@@ -73,7 +73,7 @@ export const mutations = {
 
   saveVariables(state, variables) {
     state.variables = Object.assign({}, state.variables, variables, {
-      daytimeSleep: variables.numNaps * variables.nap.h
+      daytimeSleep: variables.numNaps * variables.nap
     })
   }
 }
