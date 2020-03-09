@@ -3,7 +3,6 @@ const Vuex = require('vuex')
 const Vue = require('vue').default
 
 const Schedule = require('../../../components/napSchedule/Schedule.vue').default
-const Cycle = require('../../../components/napSchedule/Cycle.vue').default
 const storeConfig = require('../../../store')
 const test = require('../../support/tests/schedule')
 const __ = require('../../support/utils-schedule')
@@ -27,8 +26,7 @@ export const mountSchedule = () => {
   const extensions = {
     plugins: [Vuex],
     components: {
-      Schedule,
-      Cycle
+      Schedule
     }
   }
   mountVue({ template, store }, { extensions })()
