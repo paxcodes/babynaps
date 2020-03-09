@@ -10,6 +10,7 @@
         <div class="grid-x grid-margin-x">
           <div class="cell small-8 medium-6">
             <v-text-field
+              v-model="bdate"
               label="Your baby’s birthday"
               data-cy="bdate"
               :autofocus="true"
@@ -22,7 +23,12 @@
         </div>
         <div class="grid-x">
           <div class="cell small-3">
-            <v-btn data-cy="submit" type="submit" color="primary" large
+            <v-btn
+              data-cy="submit"
+              type="submit"
+              color="primary"
+              large
+              @submit.prevent="submitForm"
               >Get a Schedule</v-btn
             >
           </div>
@@ -71,5 +77,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => {
+    return {
+      bdate: null
+    }
+  },
+  methods: {
+    submitForm() {
+      this.$router.push('/schedule?' + this.bdate)
+    }
+  }
+}
 </script>
