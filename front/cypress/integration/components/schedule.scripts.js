@@ -81,14 +81,14 @@ export default {
     })
   },
   shouldRemove2Cycles: () => {
-    test.cycleCount(4)
+    test.cycleCount(6)
   },
   shouldUpdateScheduleVariables: () => {
     test.scheduleVars(expected)
     test.scheduleVarsReport(expected)
   },
   shouldIncrease1stAwakeLength: () => {
-    test.firstAwakeLength(8)
+    test.firstAwakeLength(5.5)
   },
   shouldChangeLabelAndLengthOfBedtimeCycle: () => {
     test.cycleInfo(5, json.newCycles[0])
