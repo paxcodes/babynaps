@@ -11,7 +11,7 @@ Object.assign(__, require('../../../mixins/mixins').default.methods)
 Vue.use(Vuex)
 
 // @todo Use fixtures
-const json = require('../../fixtures/getSchedule200_6month.json')
+const json = require('../../fixtures/getSchedule200_6month.json').data
 const store = new Vuex.Store({
   state: storeConfig.state,
   mutations: storeConfig.mutations
