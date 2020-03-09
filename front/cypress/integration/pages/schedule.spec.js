@@ -8,6 +8,10 @@ describe('The `/schedule?bdate=[bdate]` page', () => {
     tests.shouldHaveScheduleAndNapChart
   )
 
+  it('has the age displayed', () => {
+    cy.getCy('babyAge').should('be.visible')
+  })
+
   describe('The schedule', () => {
     it('should contain rows of data', () =>
       tests.shouldContainRowsOfData('scheduleSection'))
