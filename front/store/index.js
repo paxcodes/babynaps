@@ -43,7 +43,7 @@ export const mutations = {
       {
         label: 'Eat / Play',
         time: false,
-        length: state.variables.activity.h
+        length: state.variables.activity
       },
       {
         label: 'Bedtime',
