@@ -91,12 +91,24 @@ export default {
     test.firstAwakeLength(5.5)
   },
   shouldChangeLabelAndLengthOfBedtimeCycle: () => {
-    test.cycleInfo(5, json.newCycles[0])
+    test.cycleInfo(7, {
+      label: 'Nap',
+      time: '19:00',
+      length: 0.5
+    })
   },
   shouldAdd2Cycles: () => {
-    test.cycleCount(8)
-    test.cycleInfo(6, json.newCycles[1])
-    test.cycleInfo(7, json.newCycles[2])
+    test.cycleCount(10)
+    test.cycleInfo(8, {
+      label: 'Eat / Play',
+      time: '19:30',
+      length: 2.5
+    })
+    test.cycleInfo(9, {
+      label: 'Bedtime',
+      time: '22:00',
+      length: false
+    })
   },
   shouldUpdateScheduleVariables: (expected) => {
     test.scheduleVars(expected)
