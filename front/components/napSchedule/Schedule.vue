@@ -43,7 +43,7 @@
 
 <script>
 import mixins from '../../mixins/mixins'
-import Cycle from './Cycle'
+import Cycle from './Cycle.vue'
 
 export default {
   components: {
