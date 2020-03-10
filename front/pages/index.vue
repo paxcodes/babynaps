@@ -6,8 +6,9 @@
         Once we know how old your baby is, we&rsquo;ll get a schedule that you
         can start with and customize according to your own needs.
       </p>
-      <form
+      <v-form
         id="babyInfoForm"
+        ref="form"
         method="GET"
         action="/schedule"
         @submit.prevent="submitForm"
@@ -35,7 +36,7 @@
             >
           </div>
         </div>
-      </form>
+      </v-form>
     </div>
     <div data-cy="welcome-section">
       <h2 class="mt-12 mb-8">Our story</h2>
