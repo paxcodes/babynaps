@@ -19,7 +19,6 @@
               label="Your baby’s birthday"
               data-cy="bdate"
               :autofocus="true"
-              :max="new Date()"
               type="date"
               name="bdate"
               :rules="[validateBirthdate]"
