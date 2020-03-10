@@ -27,7 +27,7 @@
             ></v-text-field>
           </div>
         </div>
-        <div class="grid-x">
+        <div class="grid-x mt-4">
           <div class="cell small-3">
             <v-btn data-cy="submit" type="submit" color="primary" large
               >Get a Schedule</v-btn
