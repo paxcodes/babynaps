@@ -25,7 +25,6 @@
               name="bdate"
               :rules="[validateBirthdate]"
               required
-              :validate-on-blur="true"
             ></v-text-field>
           </div>
         </div>
