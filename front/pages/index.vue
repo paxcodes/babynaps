@@ -94,6 +94,11 @@ export default {
       const minDate = new Date(today).setDate(today.getDate() - 85)
       const maxDate = new Date(today.setMonth(today.getMonth() - 30))
       const bdateString = this.bdate.match(/^(\d{4})-(\d{2})-(\d{1,2})$/)
+
+      if (bdateString === null || bdateString.length !== 4) {
+        return false
+      }
+
       const bdate = new Date(bdateString[1], bdateString[2] - 1, bdateString[3])
       if (bdate > minDate) {
         return 'Your baby has to be at least 3 months old.'
