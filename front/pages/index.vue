@@ -31,7 +31,12 @@
         </div>
         <div class="grid-x mt-4">
           <div class="cell small-3">
-            <v-btn data-cy="submit" type="submit" color="primary" large
+            <v-btn
+              data-cy="submit"
+              type="submit"
+              color="primary"
+              large
+              @click.prevent
               >Get a Schedule</v-btn
             >
           </div>
