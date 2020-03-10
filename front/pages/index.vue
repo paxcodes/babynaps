@@ -6,7 +6,12 @@
         Once we know how old your baby is, we&rsquo;ll get a schedule that you
         can start with and customize according to your own needs.
       </p>
-      <form id="babyInfoForm" method="GET" action="/schedule">
+      <form
+        id="babyInfoForm"
+        method="GET"
+        action="/schedule"
+        @submit.prevent="submitForm"
+      >
         <div class="grid-x grid-margin-x">
           <div class="cell small-8 medium-6">
             <v-text-field
@@ -23,12 +28,7 @@
         </div>
         <div class="grid-x">
           <div class="cell small-3">
-            <v-btn
-              data-cy="submit"
-              type="submit"
-              color="primary"
-              large
-              @submit.prevent="submitForm"
+            <v-btn data-cy="submit" type="submit" color="primary" large
               >Get a Schedule</v-btn
             >
           </div>
