@@ -12,7 +12,7 @@
         method="GET"
         action="/schedule"
         @submit.prevent="submitForm"
-        @keydown.enter.prevent
+        @keydown.native.enter.prevent
       >
         <div class="grid-x grid-margin-x">
           <div class="cell small-8 medium-6">
