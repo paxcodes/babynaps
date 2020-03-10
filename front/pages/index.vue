@@ -9,10 +9,11 @@
       <v-form
         id="babyInfoForm"
         ref="form"
+        v-model="isValid"
         method="GET"
         action="/schedule"
         @submit.prevent="submitForm"
-        @keydown.native.enter.prevent
+        @keydown.native.enter.prevent="submitForm"
       >
         <div class="grid-x grid-margin-x">
           <div class="cell small-8 medium-6">
@@ -87,7 +88,8 @@
 export default {
   data: () => {
     return {
-      bdate: null
+      bdate: null,
+      isValid: true
     }
   },
   methods: {
@@ -114,7 +116,10 @@ export default {
       return true
     },
     submitForm() {
-      this.$router.push('/schedule?bdate=' + this.bdate)
+      this.isValid = this.$refs.form.validate()
+      if (this.isValid) {
+        this.$router.push('/schedule?bdate=' + this.bdate)
+      }
     }
   }
 }
