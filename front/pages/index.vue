@@ -22,7 +22,9 @@
               :max="new Date()"
               type="date"
               name="bdate"
+              :rules="[validateBirthdate]"
               required
+              :validate-on-blur="true"
             ></v-text-field>
           </div>
         </div>
@@ -84,6 +86,23 @@ export default {
     }
   },
   methods: {
+    validateBirthdate() {
+      if (this.bdate == null) {
+        return true
+      }
+
+      const today = new Date()
+      const minDate = new Date(today).setMonth(today.getMonth() - 3)
+      const maxDate = new Date(today.setMonth(today.getMonth() - 30))
+      const bdateString = this.bdate.match(/^(\d{4})-(\d{2})-(\d{1,2})$/)
+      const bdate = new Date(bdateString[1], bdateString[2] - 1, bdateString[3])
+      if (bdate > minDate) {
+        return 'Your baby has to be at least 3 months old.'
+      } else if (bdate < maxDate) {
+        return 'Your baby has to be at most 30 months old.'
+      }
+      return true
+    },
     submitForm() {
       this.$router.push('/schedule?' + this.bdate)
     }
