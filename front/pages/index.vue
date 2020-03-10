@@ -108,7 +108,7 @@ export default {
       return true
     },
     submitForm() {
-      this.$router.push('/schedule?' + this.bdate)
+      this.$router.push('/schedule?bdate=' + this.bdate)
     }
   }
 }
