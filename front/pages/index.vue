@@ -36,7 +36,7 @@
               type="submit"
               color="primary"
               large
-              @click.prevent
+              @click.prevent="submitForm"
               >Get a Schedule</v-btn
             >
           </div>
