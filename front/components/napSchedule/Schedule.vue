@@ -21,14 +21,9 @@
         ></Cycle>
       </tbody>
     </v-simple-table>
-    <button
-      type="button"
-      class="button hollow"
-      data-cy="addNap"
-      @click="addNap"
-    >
+    <v-btn class="my-4" data-cy="addNap" @click="addNap">
       Add a Nap
-    </button>
+    </v-btn>
     <p class="tiny">
       The schedule has a total of
       <span data-cy="numNaps">{{ numNaps }}</span> naps and
