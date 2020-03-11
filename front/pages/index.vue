@@ -6,7 +6,15 @@
         Once we know how old your baby is, we&rsquo;ll get a schedule that you
         can start with and customize according to your own needs.
       </p>
-      <form id="babyInfoForm" method="GET" action="/schedule">
+      <v-form
+        id="babyInfoForm"
+        ref="form"
+        v-model="isValid"
+        method="GET"
+        action="/schedule"
+        @submit.prevent="submitForm"
+        @keydown.native.enter.prevent="submitForm"
+      >
         <div class="grid-x grid-margin-x">
           <div class="cell small-8 medium-6">
             <v-text-field
@@ -14,26 +22,26 @@
               label="Your baby’s birthday"
               data-cy="bdate"
               :autofocus="true"
-              :max="new Date()"
               type="date"
               name="bdate"
+              :rules="[validateBirthdate]"
               required
             ></v-text-field>
           </div>
         </div>
-        <div class="grid-x">
+        <div class="grid-x mt-4">
           <div class="cell small-3">
             <v-btn
               data-cy="submit"
               type="submit"
               color="primary"
               large
-              @submit.prevent="submitForm"
+              @click.prevent="submitForm"
               >Get a Schedule</v-btn
             >
           </div>
         </div>
-      </form>
+      </v-form>
     </div>
     <div data-cy="welcome-section">
       <h2 class="mt-12 mb-8">Our story</h2>
@@ -80,12 +88,38 @@
 export default {
   data: () => {
     return {
-      bdate: null
+      bdate: null,
+      isValid: true
     }
   },
   methods: {
+    validateBirthdate() {
+      if (this.bdate == null) {
+        return true
+      }
+
+      const today = new Date()
+      const minDate = new Date(today).setDate(today.getDate() - 85)
+      const maxDate = new Date(today.setMonth(today.getMonth() - 30))
+      const bdateString = this.bdate.match(/^(\d{4})-(\d{2})-(\d{1,2})$/)
+
+      if (bdateString === null || bdateString.length !== 4) {
+        return false
+      }
+
+      const bdate = new Date(bdateString[1], bdateString[2] - 1, bdateString[3])
+      if (bdate > minDate) {
+        return 'Your baby has to be at least 3 months old.'
+      } else if (bdate < maxDate) {
+        return 'Your baby has to be at most 30 months old.'
+      }
+      return true
+    },
     submitForm() {
-      this.$router.push('/schedule?' + this.bdate)
+      this.isValid = this.$refs.form.validate()
+      if (this.isValid) {
+        this.$router.push('/schedule?bdate=' + this.bdate)
+      }
     }
   }
 }

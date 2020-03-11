@@ -1,6 +1,6 @@
-import subMonths from 'date-fns/sub_months'
-import subWeeks from 'date-fns/sub_weeks'
-import subYears from 'date-fns/sub_years'
+import subMonths from 'date-fns/subMonths'
+import subWeeks from 'date-fns/subWeeks'
+import subYears from 'date-fns/subYears'
 import format from 'date-fns/format'
 
 // Selectors
@@ -29,7 +29,7 @@ export const bdateOf = (num, unit) => {
       throw new Error('Invalid unit of time: ' + unit)
   }
 
-  return format(date, 'YYYY-MM-DD')
+  return format(date, 'yyyy-MM-dd')
 }
 
 export const userSubmitsForm = () => cy.get(submitBtn).click()

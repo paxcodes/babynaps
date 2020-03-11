@@ -20,8 +20,8 @@ describe('The schedule', () => {
     it('removes 2 cycles', tests.shouldRemove2Cycles)
     it("updates the schedule's variables", () =>
       tests.shouldUpdateScheduleVariables({
-        numNaps: 1,
-        daytimeSleep: 1.5
+        numNaps: 2,
+        daytimeSleep: 2
       }))
     it('increases the 1st awake length', tests.shouldIncrease1stAwakeLength)
 
@@ -35,7 +35,7 @@ describe('The schedule', () => {
       it('adds 2 cycles', tests.shouldAdd2Cycles)
       it("updates the schedule's variables", () =>
         tests.shouldUpdateScheduleVariables({
-          numNaps: 3,
+          numNaps: 4,
           daytimeSleep: 3.5
         }))
     })

@@ -43,7 +43,7 @@ export const mutations = {
       {
         label: 'Eat / Play',
         time: false,
-        length: state.variables.activity.h
+        length: state.variables.activity
       },
       {
         label: 'Bedtime',
@@ -73,7 +73,7 @@ export const mutations = {
 
   saveVariables(state, variables) {
     state.variables = Object.assign({}, state.variables, variables, {
-      daytimeSleep: variables.numNaps * variables.nap.h
+      daytimeSleep: variables.numNaps * variables.nap
     })
   }
 }

@@ -3,7 +3,6 @@ const Vuex = require('vuex')
 const Vue = require('vue').default
 
 const Schedule = require('../../../components/napSchedule/Schedule.vue').default
-const Cycle = require('../../../components/napSchedule/Cycle.vue').default
 const storeConfig = require('../../../store')
 const test = require('../../support/tests/schedule')
 const __ = require('../../support/utils-schedule')
@@ -12,7 +11,7 @@ Object.assign(__, require('../../../mixins/mixins').default.methods)
 Vue.use(Vuex)
 
 // @todo Use fixtures
-const json = require('../../fixtures/schedule6MonthOld.json')
+const json = require('../../fixtures/getSchedule200_6month.json').data
 const store = new Vuex.Store({
   state: storeConfig.state,
   mutations: storeConfig.mutations
@@ -27,8 +26,7 @@ export const mountSchedule = () => {
   const extensions = {
     plugins: [Vuex],
     components: {
-      Schedule,
-      Cycle
+      Schedule
     }
   }
   mountVue({ template, store }, { extensions })()
@@ -62,9 +60,8 @@ export default {
 
     cy.get(__.daytimeSleep).then((daytimeSleep) => {
       const actual = __.removeWhitespace(daytimeSleep.text())
-
-      const expected_ds = store.state.variables.daytimeSleep
-      const expected = expected_ds + ' ' + __.timeLabel(expected_ds)
+      const expectedHrs = 3
+      const expected = expectedHrs + ' ' + __.timeLabel(expectedHrs)
 
       expect(actual).to.equal(expected)
     })
@@ -84,22 +81,34 @@ export default {
     })
   },
   shouldRemove2Cycles: () => {
-    test.cycleCount(4)
+    test.cycleCount(6)
   },
   shouldUpdateScheduleVariables: () => {
     test.scheduleVars(expected)
     test.scheduleVarsReport(expected)
   },
   shouldIncrease1stAwakeLength: () => {
-    test.firstAwakeLength(8)
+    test.firstAwakeLength(5.5)
   },
   shouldChangeLabelAndLengthOfBedtimeCycle: () => {
-    test.cycleInfo(5, json.newCycles[0])
+    test.cycleInfo(7, {
+      label: 'Nap',
+      time: '19:00',
+      length: 0.5
+    })
   },
   shouldAdd2Cycles: () => {
-    test.cycleCount(8)
-    test.cycleInfo(6, json.newCycles[1])
-    test.cycleInfo(7, json.newCycles[2])
+    test.cycleCount(10)
+    test.cycleInfo(8, {
+      label: 'Eat / Play',
+      time: '19:30',
+      length: 2.5
+    })
+    test.cycleInfo(9, {
+      label: 'Bedtime',
+      time: '22:00',
+      length: false
+    })
   },
   shouldUpdateScheduleVariables: (expected) => {
     test.scheduleVars(expected)

@@ -33,18 +33,8 @@ export default {
   },
   shouldDisplayAnErrorMessage: () => {
     const bdate = __.bdateOf('32', 'months')
-    cy.server()
-    cy.route(Cypress.env('apiUrl') + '/schedule?bdate=' + bdate).as(
-      'loadSchedule'
-    )
-
     __.userSubmitsCompletedForm('Jack', bdate)
-    cy.wait('@loadSchedule')
-
-    cy.get(__.bdateFieldError).then((error) => {
-      expect(error.text()).to.match(/^(\S+)+( +\S+)*$/)
-      expect(error).to.be.visible
-    })
+    cy.get('.error--text').should('be.visible')
   },
   shouldGoToTheSchedulePage: () => {
     cy.location().should((loc) => {
