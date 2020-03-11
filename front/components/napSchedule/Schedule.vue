@@ -5,7 +5,7 @@
       Here&rsquo;s a sample schedule for your
       <span data-cy="babyAge" :title="ageInWeeks">{{ ageInMonths }}</span> old.
     </p>
-    <table>
+    <v-simple-table>
       <thead>
         <tr>
           <th width></th>
@@ -20,7 +20,7 @@
           :index="index"
         ></Cycle>
       </tbody>
-    </table>
+    </v-simple-table>
     <button
       type="button"
       class="button hollow"
