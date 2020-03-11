@@ -4,6 +4,18 @@
     <p>
       Here&rsquo;s a sample schedule for your
       <span data-cy="babyAge" :title="ageInWeeks">{{ ageInMonths }}</span> old.
+      The schedule has a total of
+      <strong
+        ><span data-cy="numNaps">{{ numNaps }}</span> naps</strong
+      >
+      and
+      <strong
+        ><span data-cy="daytimeSleep">
+          {{ daytimeSleep }}
+          {{ daytimeSleepLabel }}
+        </span>
+        of daytime sleep.
+      </strong>
     </p>
     <v-simple-table>
       <thead>
@@ -24,15 +36,6 @@
     <v-btn class="my-4" data-cy="addNap" @click="addNap">
       Add a Nap
     </v-btn>
-    <p class="tiny">
-      The schedule has a total of
-      <span data-cy="numNaps">{{ numNaps }}</span> naps and
-      <span data-cy="daytimeSleep">
-        {{ daytimeSleep }}
-        {{ daytimeSleepLabel }}
-      </span>
-      of daytime sleep.
-    </p>
   </div>
 </template>
 
