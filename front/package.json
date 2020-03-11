@@ -1,7 +1,7 @@
 {
-  "name": "front",
+  "name": "thebabynapschedulemaker-frontend",
   "version": "1.0.0",
-  "description": "My terrific Nuxt.js project",
+  "description": "Create your own baby's nap schedule.",
   "author": "Pax",
   "private": true,
   "scripts": {
