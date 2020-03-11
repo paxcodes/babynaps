@@ -1,6 +1,10 @@
 <template>
   <v-app>
-    <h1 class="text-center my-8">The Baby Schedule Maker</h1>
+    <nuxt-link to="/">
+      <h1 class="text-center my-8" style="color:black;">
+        The Baby Schedule Maker
+      </h1>
+    </nuxt-link>
     <v-content style="max-width: 40rem" class="mx-auto mb-12">
       <v-container>
         <nuxt />
