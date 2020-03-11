@@ -4,12 +4,10 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 from flask_cors import cross_origin
-from dotenv import load_dotenv
 
 from baby.Baby import ABaby
 
 app = Flask(__name__)
-load_dotenv()
 
 
 @app.route('/')
