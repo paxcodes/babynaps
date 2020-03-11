@@ -1,13 +1,13 @@
 <template>
   <tr :data-cycle-type="cycleType">
-    <td>
+    <td class="body-1">
       {{ label }}
       <br />
       <a
         v-if="label == 'Nap'"
         href="#"
         title="Remove this nap"
-        class="tiny"
+        class="overline"
         data-class="removeNapLink"
         @click.prevent="removeNap()"
         >&times; remove this nap</a
