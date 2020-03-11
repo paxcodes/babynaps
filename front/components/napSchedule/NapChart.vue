@@ -2,7 +2,7 @@
   <div class="cell">
     <h3 class="h4">Average Sleep Needs</h3>
     <p>{{ napChart.description }}</p>
-    <table>
+    <v-simple-table>
       <thead>
         <tr>
           <th>Age</th>
@@ -19,7 +19,7 @@
           <td>{{ row.totalSleep }}</td>
         </tr>
       </tbody>
-    </table>
+    </v-simple-table>
     <div class="tiny">
       References:
       <br />
