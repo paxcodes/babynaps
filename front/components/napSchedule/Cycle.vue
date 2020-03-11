@@ -13,10 +13,9 @@
         >&times; remove this nap</a
       >
     </td>
-    <td>
+    <td class="pt-5">
       <!-- @todo warn when value is too early / too late? -->
       <v-text-field
-        class="mt-5"
         type="time"
         required
         :value="time"
@@ -26,8 +25,8 @@
         dense
       />
     </td>
-    <td>
-      <div v-if="length !== false" class="grid-x input-group">
+    <td class="pt-5" style="min-width: 175px">
+      <div v-if="length !== false">
         <!-- @todo warn when value is too high / low? -->
         <span style="width:100px; display:inline-block">
           <v-text-field
