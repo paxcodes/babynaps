@@ -15,7 +15,16 @@
     </td>
     <td>
       <!-- @todo warn when value is too early / too late? -->
-      <input type="time" required :value="time" @input="adjustTime" />
+      <v-text-field
+        class="mt-5"
+        type="time"
+        required
+        :value="time"
+        @input="adjustTime"
+        filled
+        rounded
+        dense
+      />
     </td>
     <td>
       <div v-if="length !== false" class="grid-x input-group">
