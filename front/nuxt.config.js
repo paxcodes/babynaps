@@ -19,7 +19,20 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      {
+        rel: 'icon',
+        media: '(prefers-color-scheme:light)',
+        href: '/favicon-light.ico?v2',
+        type: 'image/x-icon'
+      },
+      {
+        rel: 'icon',
+        media: '(prefers-color-scheme:dark)',
+        href: '/favicon-dark.png?v2',
+        type: 'image/png'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
