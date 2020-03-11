@@ -1,6 +1,6 @@
 <template>
   <div class="cell">
-    <h3 class="h4">Average Sleep Needs</h3>
+    <h2>Average Sleep Needs</h2>
     <p>{{ napChart.description }}</p>
     <v-simple-table>
       <thead>
