@@ -10,6 +10,11 @@ import Schedule from '../components/napSchedule/Schedule'
 import NapChart from '../components/napSchedule/NapChart.vue'
 
 export default {
+  head() {
+    return {
+      title: 'Sample Schedule'
+    }
+  },
   components: {
     Schedule,
     NapChart

@@ -86,6 +86,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      titleTemplate: 'The Baby Nap Schedule Maker'
+    }
+  },
   data: () => {
     return {
       bdate: null,
