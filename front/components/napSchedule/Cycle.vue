@@ -29,14 +29,19 @@
     <td>
       <div v-if="length !== false" class="grid-x input-group">
         <!-- @todo warn when value is too high / low? -->
-        <input
-          class="input-group-field cell small-6 medium-4"
-          type="number"
-          step="0.25"
-          required
-          :value="length"
-          @input="adjustLength"
-        />
+        <span style="width:100px; display:inline-block">
+          <v-text-field
+            class="mr-2"
+            type="number"
+            step="0.25"
+            required
+            :value="length"
+            @input="adjustLength"
+            filled
+            rounded
+            dense
+          />
+        </span>
         <span class="input-group-label cell small-6 medium-5">{{
           lengthLabel
         }}</span>
