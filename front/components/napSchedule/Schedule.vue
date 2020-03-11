@@ -1,6 +1,6 @@
 <template>
   <div class="cell">
-    <h2>Sample Schedule</h2>
+    <h2 class="my-8">Sample Schedule</h2>
     <p>
       Here&rsquo;s a sample schedule for your
       <span data-cy="babyAge" :title="ageInWeeks">{{ ageInMonths }}</span> old.
