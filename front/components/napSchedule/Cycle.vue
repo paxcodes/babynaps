@@ -1,33 +1,46 @@
 <template>
   <tr :data-cycle-type="cycleType">
-    <td>
+    <td class="body-1">
       {{ label }}
       <br />
       <a
         v-if="label == 'Nap'"
         href="#"
         title="Remove this nap"
-        class="tiny"
+        class="overline"
         data-class="removeNapLink"
         @click.prevent="removeNap()"
         >&times; remove this nap</a
       >
     </td>
-    <td>
+    <td class="pt-5">
       <!-- @todo warn when value is too early / too late? -->
-      <input type="time" required :value="time" @input="adjustTime" />
+      <v-text-field
+        type="time"
+        required
+        :value="time"
+        @input="adjustTime"
+        filled
+        rounded
+        dense
+      />
     </td>
-    <td>
-      <div v-if="length !== false" class="grid-x input-group">
+    <td class="pt-5" style="min-width: 175px">
+      <div v-if="length !== false">
         <!-- @todo warn when value is too high / low? -->
-        <input
-          class="input-group-field cell small-6 medium-4"
-          type="number"
-          step="0.25"
-          required
-          :value="length"
-          @input="adjustLength"
-        />
+        <span style="width:100px; display:inline-block">
+          <v-text-field
+            class="mr-2"
+            type="number"
+            step="0.25"
+            required
+            :value="length"
+            @input="adjustLength"
+            filled
+            rounded
+            dense
+          />
+        </span>
         <span class="input-group-label cell small-6 medium-5">{{
           lengthLabel
         }}</span>

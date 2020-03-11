@@ -1,11 +1,23 @@
 <template>
   <div class="cell">
-    <h2 class="h3">Sample Schedule</h2>
+    <h2 class="my-8">Sample Schedule</h2>
     <p>
       Here&rsquo;s a sample schedule for your
       <span data-cy="babyAge" :title="ageInWeeks">{{ ageInMonths }}</span> old.
+      The schedule has a total of
+      <strong
+        ><span data-cy="numNaps">{{ numNaps }}</span> naps</strong
+      >
+      and
+      <strong
+        ><span data-cy="daytimeSleep">
+          {{ daytimeSleep }}
+          {{ daytimeSleepLabel }}
+        </span>
+        of daytime sleep.
+      </strong>
     </p>
-    <table>
+    <v-simple-table>
       <thead>
         <tr>
           <th width></th>
@@ -20,24 +32,10 @@
           :index="index"
         ></Cycle>
       </tbody>
-    </table>
-    <button
-      type="button"
-      class="button hollow"
-      data-cy="addNap"
-      @click="addNap"
-    >
+    </v-simple-table>
+    <v-btn class="my-4" data-cy="addNap" @click="addNap">
       Add a Nap
-    </button>
-    <p class="tiny">
-      The schedule has a total of
-      <span data-cy="numNaps">{{ numNaps }}</span> naps and
-      <span data-cy="daytimeSleep">
-        {{ daytimeSleep }}
-        {{ daytimeSleepLabel }}
-      </span>
-      of daytime sleep.
-    </p>
+    </v-btn>
   </div>
 </template>
 

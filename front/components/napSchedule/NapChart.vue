@@ -1,8 +1,8 @@
 <template>
   <div class="cell">
-    <h3 class="h4">Average Sleep Needs</h3>
+    <h2 class="my-8">Average Sleep Needs</h2>
     <p>{{ napChart.description }}</p>
-    <table>
+    <v-simple-table>
       <thead>
         <tr>
           <th>Age</th>
@@ -19,8 +19,8 @@
           <td>{{ row.totalSleep }}</td>
         </tr>
       </tbody>
-    </table>
-    <div class="tiny">
+    </v-simple-table>
+    <div class="caption mt-8">
       References:
       <br />
       <ol>
