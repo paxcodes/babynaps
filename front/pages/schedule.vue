@@ -10,11 +10,6 @@ import Schedule from '../components/napSchedule/Schedule'
 import NapChart from '../components/napSchedule/NapChart.vue'
 
 export default {
-  head() {
-    return {
-      title: 'Sample Schedule'
-    }
-  },
   components: {
     Schedule,
     NapChart
@@ -28,6 +23,11 @@ export default {
       this.$store.commit('saveVariables', response.variables)
       this.$store.commit('saveAge', response.age)
       this.scheduleLoaded = true
+    }
+  },
+  head() {
+    return {
+      title: 'Sample Schedule'
     }
   }
 }

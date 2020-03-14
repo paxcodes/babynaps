@@ -19,10 +19,10 @@
         type="time"
         required
         :value="time"
-        @input="adjustTime"
         filled
         rounded
         dense
+        @input="adjustTime"
       />
     </td>
     <td class="pt-5" style="min-width: 175px">
@@ -35,10 +35,10 @@
             step="0.25"
             required
             :value="length"
-            @input="adjustLength"
             filled
             rounded
             dense
+            @input="adjustLength"
           />
         </span>
         <span class="input-group-label cell small-6 medium-5">{{

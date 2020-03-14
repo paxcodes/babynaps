@@ -86,11 +86,6 @@
 
 <script>
 export default {
-  head() {
-    return {
-      titleTemplate: 'The Baby Nap Schedule Maker'
-    }
-  },
   data: () => {
     return {
       bdate: null,
@@ -125,6 +120,11 @@ export default {
       if (this.isValid) {
         this.$router.push('/schedule?bdate=' + this.bdate)
       }
+    }
+  },
+  head() {
+    return {
+      titleTemplate: 'The Baby Nap Schedule Maker'
     }
   }
 }
