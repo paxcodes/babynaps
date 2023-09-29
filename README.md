@@ -15,6 +15,8 @@ This page generates a sample nap schedule. Unlike most, if not all, baby schedul
 
 ### Frontend
 
+Requires at least node v.14
+
 ``` bash
 # install dependencies
 $ npm install

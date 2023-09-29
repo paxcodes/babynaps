@@ -8,20 +8,30 @@
 <script>
 import Schedule from '../components/napSchedule/Schedule'
 import NapChart from '../components/napSchedule/NapChart.vue'
+import Baby, { getScheduleParameters } from '../models/Baby'
 
 export default {
   components: {
     Schedule,
     NapChart
   },
-  async created() {
-    if ({}.hasOwnProperty.call(this.$route.query, 'bdate')) {
-      const response = await this.$axios.$get(
-        'schedule?bdate=' + this.$route.query.bdate
-      )
-      this.$store.commit('saveCycles', response.cycles)
-      this.$store.commit('saveVariables', response.variables)
-      this.$store.commit('saveAge', response.age)
+  created() {
+    const bdateYYYYMMDD = {}.hasOwnProperty.call(this.$route.query, 'bdate')
+    if (bdateYYYYMMDD) {
+      const bdate = new Date(`${this.$route.query.bdate}T00:00:00`)
+      const ageInMonths = Baby.ageInMonths(bdate)
+      const age = {
+        weeks: Baby.ageInWeeks(bdate),
+        months: ageInMonths,
+        month: `${ageInMonths}-month`
+      }
+
+      const variables = getScheduleParameters(age.months)
+      const cycles = Baby.generateSchedule(variables)
+
+      this.$store.commit('saveCycles', cycles)
+      this.$store.commit('saveVariables', variables)
+      this.$store.commit('saveAge', age)
       this.scheduleLoaded = true
     }
   },
