@@ -67,13 +67,6 @@ export default {
     '@nuxtjs/dotenv'
   ],
   /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  axios: {
-    baseUrl: process.env.API_URL
-  },
-  /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
