@@ -24,7 +24,7 @@
           </span>
           | Hand-built by
           <span style="text-decoration:line-through">pandas</span>
-          <a href="https://margret.pw" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/paxcodes/babynaps/" target="_blank" rel="noopener noreferrer"
             >Pax</a
           >
           🐼
